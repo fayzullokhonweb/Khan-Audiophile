@@ -51,18 +51,18 @@ const Signup = () => {
           <Form>
             <h2>Create Account</h2>
             <div className={styles["social-icons"]}>
-              <a onClick={signUpWithGoogle} className={styles.icon}>
+              <Link onClick={signUpWithGoogle} className={styles.icon}>
                 <FaGooglePlusG style={{ width: "30px", height: "20px" }} />
-              </a>
-              <a onClick={signUpWithGoogle} className={styles.icon}>
+              </Link>
+              <Link onClick={signUpWithGoogle} className={styles.icon}>
                 <RiFacebookFill style={{ width: "20px", height: "20px" }} />
-              </a>
-              <a onClick={signUpWithGoogle} className={styles.icon}>
+              </Link>
+              <Link onClick={signUpWithGoogle} className={styles.icon}>
                 <FaGithub style={{ width: "20px", height: "20px" }} />
-              </a>
-              <a onClick={signUpWithGoogle} className={styles.icon}>
+              </Link>
+              <Link onClick={signUpWithGoogle} className={styles.icon}>
                 <FaLinkedinIn style={{ width: "15px", height: "20px" }} />
-              </a>
+              </Link>
             </div>
             <span>or use your email for registration</span>
             <input type="text" placeholder="Name" />
@@ -77,18 +77,18 @@ const Signup = () => {
           <Form>
             <h2>Sign In</h2>
             <div className={styles["social-icons"]}>
-              <a onClick={signUpWithGoogle} className={styles.icon}>
+              <Link onClick={signUpWithGoogle} className={styles.icon}>
                 <FaGooglePlusG style={{ width: "30px", height: "20px" }} />
-              </a>
-              <a href="#" className={styles.icon}>
+              </Link>
+              <Link href="#" className={styles.icon}>
                 <RiFacebookFill style={{ width: "20px", height: "20px" }} />
-              </a>
-              <a href="#" className={styles.icon}>
+              </Link>
+              <Link href="#" className={styles.icon}>
                 <FaGithub style={{ width: "20px", height: "20px" }} />
-              </a>
-              <a href="#" className={styles.icon}>
+              </Link>
+              <Link href="#" className={styles.icon}>
                 <FaLinkedinIn style={{ width: "15px", height: "20px" }} />
-              </a>
+              </Link>
             </div>
             <span>or use your email for login</span>
             <input name="email" type="email" placeholder="Email" />
