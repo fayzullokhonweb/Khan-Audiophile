@@ -1,0 +1,138 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-left: 750px;
+  padding-bottom: 150px;
+  bottom: 0;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.modal {
+  background: var(--white-color);
+  border-radius: 8px;
+  width: 377px;
+  text-align: center;
+  padding: 32px;
+  position: relative;
+  z-index: 1001;
+}
+
+.closeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 31px;
+}
+
+.total__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+
+
+h6 {
+  text-transform: uppercase;
+}
+
+
+.total__wrapper> :first-child {
+  color: var(--border-bottom);
+}
+
+.removeBtn {
+  border: none;
+  color: var(--border-bottom);
+  text-decoration: underline;
+  font-size: 15px;
+  background-color: var(--white-color);
+  font-family: "Manrope";
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+
+.product img {
+  width: 64px;
+  height: 64px;
+  margin-right: 18px;
+
+}
+
+.productDetails {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productContent {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.productContent>:first-child {
+  font-size: 15px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary-dark);
+  display: inline-block;
+  width: 13ch;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.productContent>:last-child {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 25px;
+  color: var(--border-bottom);
+}
+
+.empty {
+  margin-bottom: 32px;
+}
+
+.amountControls {
+  /* width: 96px; */
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 12px;
+  background-color: var(--primary-light);
+}
+
+.amountControls button,
+span {
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--border-bottom);
+}
+
+.amountControls span {
+  color: var(--primary-dark);
+}

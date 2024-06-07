@@ -1,0 +1,10 @@
+export { default as Hero } from "./Hero";
+export { default as Footer } from "./Footer";
+export { default as Navbar } from "./Navbar";
+export { default as NavLinks } from "./NavLinks";
+export { default as Featured } from "./Featured";
+export { default as Card } from "./Card";
+export { default as ProductsList } from "./ProductsList";
+export { default as Details } from "./Details";
+export { default as Modal } from "./Modal";
+export { default as ProtectedRoutes } from "./ProtectedRoutes";

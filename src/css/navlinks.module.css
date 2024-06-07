@@ -1,0 +1,20 @@
+.navlist {
+  display: flex;
+  gap: 34px;
+}
+
+.navitem a {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 2px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  transition: 0.3s;
+
+}
+
+.navitem a:hover {
+  color: var(--primary-color);
+
+}

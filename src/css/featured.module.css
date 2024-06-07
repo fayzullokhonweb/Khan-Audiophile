@@ -1,0 +1,47 @@
+.featured {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 168px;
+}
+
+.featured__item {
+  border-radius: 8px;
+  background-color: var(--primary-light);
+  padding: 116px 108px 30px 108px;
+  position: relative;
+  width: 350px;
+  cursor: pointer;
+}
+
+.featured__img {
+  position: absolute;
+  bottom: 140px;
+}
+
+.featured__text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.29px;
+  margin-bottom: 15px;
+}
+
+.shopLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  gap: 13px;
+  transition: 0.3s;
+}
+
+.featured__item:hover .shopLink {
+  color: var(--primary-color);
+}
+
+.shopLink img {
+  width: 5px;
+  height: 10px;
+}

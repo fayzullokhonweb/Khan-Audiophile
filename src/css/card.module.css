@@ -1,0 +1,105 @@
+.card {
+  font-family: "Manrope";
+}
+
+/* first card */
+
+
+.first__card {
+  display: flex;
+  gap: 138px;
+  padding: 96px 95px 0 117px;
+  background-color: var(--primary-color);
+  margin-bottom: 48px;
+  border-radius: 8px;
+
+  background-image: url('../assets/home/desktop/pattern-circles.svg');
+  background-position: -300px center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.first__card-content {
+  width: 350px;
+  margin-top: 45px;
+}
+
+
+.first__card-title {
+  color: var(--white-color);
+  margin-bottom: 24px;
+}
+
+.first__card-text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  color: var(--white-color);
+  margin-bottom: 40px;
+}
+
+.first__card__img-wrapper {}
+
+.first__card__img {
+  width: 410px;
+  height: 490px;
+}
+
+.card-link {
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  color: var(--white-color);
+  background-color: var(--black-color);
+}
+
+.card-link:hover {
+  background-color: var(--btn-hover);
+}
+
+/* second card */
+
+.second__card {
+  margin-bottom: 48px;
+  border-radius: 8px;
+  background-image: url('../assets/home/desktop/image-speaker-zx7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 101px 95px;
+}
+
+.second__card-title {
+  margin-bottom: 32px;
+}
+
+
+/* last card */
+
+.last__card {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 160px;
+}
+
+.last__card__img-wrapper {
+  border-radius: 8px;
+
+}
+
+.last__card__img {
+  border-radius: 8px;
+}
+
+.last__card__content {
+  border-radius: 8px;
+  width: 540px;
+  height: 320px;
+  padding: 100px 95px;
+  background-color: var(--primary-light);
+}
+
+.last__card-title {
+  margin-bottom: 32px;
+}
