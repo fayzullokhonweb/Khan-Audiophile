@@ -1,0 +1,29 @@
+
+
+
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 310px
+}
+
+.span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+  font-family: Manrope;
+  margin-bottom: 9px,
+}
+
+.input {
+  padding: 18px 24px;
+  border-radius: 8px;
+  border: 1px solid #CFCFCF;
+  outline: none
+}
+
+.input::placeholder {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Manrope";
+}

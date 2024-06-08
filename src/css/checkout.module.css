@@ -49,16 +49,62 @@
 .details__inputs {
   display: flex;
   gap: 16px;
+  margin-bottom: 24px;
+
+}
+
+input ::placeholder {
+  color: aqua;
+}
+
+
+
+
+
+
+
+
+
+.shipping {
+  margin-top: 53px;
+  margin-bottom: 61px;
+}
+
+.shipping label {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+.payment {}
+
+.payment__method {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 149px;
+}
+
+.payment__method p {
+  font-size: 12px;
+  font-weight: 700;
+  width: 320px;
+}
+
+.payment__method-item {
+  display: flex;
   align-items: center;
+  flex-direction: column;
+  margin-bottom: 24px;
+  gap: 16px;
+  width: 100%;
 }
 
-.details__inputs {
-  border-radius: 8px;
-}
-
-.label {
-
-}
 
 
 .summary {

@@ -5,34 +5,9 @@ import { Link } from "react-router-dom";
 import styles from "../css/checkout.module.css";
 import Footer from "../components/Footer";
 
-function Checkout() {
-  function FormInput({ label, name, type, placeholder }) {
-    return (
-      <label
-        style={{ display: "flex", flexDirection: "column", width: "310px" }}
-      >
-        <div>
-          <span
-            style={{
-              fontSize: "12px",
-              fontWeight: "700",
-              color: "#000",
-              fontFamily: "Manrope",
-            }}
-          >
-            {label}
-          </span>
-        </div>
-        <input
-          className={styles["details__input"]}
-          type={type}
-          placeholder={placeholder}
-          name={name}
-        />
-      </label>
-    );
-  }
+import FormInput from "../components/FormInput";
 
+function Checkout() {
   return (
     <>
       <section className={styles.section}>
@@ -43,26 +18,78 @@ function Checkout() {
           <div className={styles.wrapper}>
             <div className={styles.checkout}>
               <h3 className={styles["checkout__title"]}>checkout</h3>
-              <div className={styles.details}>
-                <p className={styles["details__title"]}>billing details</p>
+              <div>
+                {" "}
+                <div className={styles.details}>
+                  <p className={styles["details__title"]}>billing details</p>
+                  <div className={styles["details__inputs"]}>
+                    <FormInput
+                      label="Name"
+                      placeholder="Alexei Ward"
+                      type="text"
+                    />
+                    <FormInput
+                      label="Email Address"
+                      placeholder="alexei@mail.com"
+                      type="email"
+                    />
+                  </div>
+                </div>
+                <FormInput
+                  className={styles.number}
+                  label="Phone Number"
+                  type="number"
+                  placeholder="+1 202-555-0136"
+                />
+              </div>
+              <div className={styles.shipping}>
+                <p className={styles["details__title"]}>shipping info</p>
+                <FormInput
+                  placeholder="1137 Williams Avenue"
+                  type="text"
+                  label="Addres"
+                />
+                <div
+                  style={{ marginTop: "24px" }}
+                  className={styles["details__inputs"]}
+                >
+                  <FormInput
+                    type="number"
+                    placeholder="1001"
+                    label="ZIP Code "
+                  />
+                  <FormInput type="text" placeholder="New York" label="City" />
+                </div>
+                <FormInput
+                  label="Country"
+                  placeholder="United States"
+                  type="text"
+                />
+              </div>
+              <div>
+                <div className={styles.payment}>
+                  <p className={styles["details__title"]}>Payment Details</p>
+                  <div className={styles["payment__method"]}>
+                    <p>payment method</p>
+                    <div className={styles["payment__method-item"]}>
+                      <FormInput placeholder="e-Money" type="text" />
+                      <FormInput placeholder="Cash on Delivery" type="text" />
+                    </div>
+                  </div>
+                </div>
                 <div className={styles["details__inputs"]}>
                   <FormInput
-                    label="Name"
-                    placeholder="Alexei Ward"
-                    type="text"
+                    label="e-Money Number "
+                    type="number"
+                    placeholder="238521993"
                   />
                   <FormInput
-                    label="Email Address"
-                    placeholder="alexei@mail.com"
-                    type="email"
+                    label="e-Money Pin "
+                    type="number"
+                    placeholder="6891"
                   />
                 </div>
               </div>
-              <FormInput
-                label="Phone Number"
-                type="number"
-                placeholder="+1 202-555-0136"
-              />
             </div>
             <div className={styles.summary}>efbeufbewufbu</div>
           </div>
