@@ -51,7 +51,7 @@ const Signup = () => {
           <Form>
             <h2>Create Account</h2>
             <div className={styles["social-icons"]}>
-              <button onClick={signUpWithGoogle} className={styles.icon}>
+              <button  onClick={signUpWithGoogle} className={styles.icon}>
                 <FaGooglePlusG style={{ width: "30px", height: "20px" }} />
               </button>
               <button onClick={signUpWithGoogle} className={styles.icon}>
