@@ -68,7 +68,11 @@ const Signup = () => {
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button onClick={registerWithEmailAndPassword} type="submit">
+            <button
+              className={styles.button}
+              onClick={registerWithEmailAndPassword}
+              type="submit"
+            >
               Sign Up
             </button>
           </Form>
@@ -94,7 +98,11 @@ const Signup = () => {
             <input name="email" type="email" placeholder="Email" />
             <input name="password" type="password" placeholder="Password" />
 
-            <button onClick={registerWithEmailAndPassword} type="submit">
+            <button
+              className={styles.button}
+              onClick={registerWithEmailAndPassword}
+              type="submit"
+            >
               Sign In
             </button>
           </Form>
@@ -107,7 +115,7 @@ const Signup = () => {
               <h2>Welcome Back!</h2>
               <p>Enter your personal details to use all of site features</p>
               <button
-                className={styles.hidden}
+                className={`${styles.hidden}button`}
                 id="login"
                 onClick={handleLoginClick}
               >
@@ -122,7 +130,7 @@ const Signup = () => {
                 Register with your personal details to use all of site features
               </p>
               <button
-                className={styles.hidden}
+                className={`${styles.hidden}button`}
                 id="register"
                 onClick={handleRegisterClick}
               >
