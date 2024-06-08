@@ -138,10 +138,9 @@
 }
 
 .social-icons {
-  margin: 20px 0;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
 }
 
 .social-icons a {
