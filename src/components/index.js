@@ -8,4 +8,3 @@ export { default as ProductsList } from "./ProductsList";
 export { default as Details } from "./Details";
 export { default as Modal } from "./Modal";
 export { default as ProtectedRoutes } from "./ProtectedRoutes";
-export { default as SubmitBtn } from "./SubmitBtn";

@@ -11,17 +11,15 @@ import MainLayout from "./layout/MainLayout";
 import { ProtectedRoutes } from "./components";
 
 // context
-
-import { useEffect } from "react";
-import { authReady, login } from "./features/userSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "./context/globalContext";
 
 // firebase
-import { auth } from "./firebase/firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase/firebaseConfig";
 
 // action
-import { action as RegisterAction } from "./pages/Register";
+import { action as SignUpAction } from "./pages/Signup";
 
 // pages
 import {
@@ -32,8 +30,7 @@ import {
   SingleProduct,
   Speakers,
   Error,
-  Register,
-  Login
+  Signup,
 } from "./pages";
 
 import { loader as HeadphonesLoader } from "./pages/Headphones";
@@ -42,8 +39,15 @@ import { loader as EarphonesLoader } from "./pages/Earphones";
 import { loader as HomeLoader } from "./pages/Home";
 
 function App() {
-  const { user } = useSelector((state) => state.user);
+  const { user, dispatch, authReady } = useContext(GlobalContext);
 
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      dispatch({ type: "LOG_IN", payload: user });
+      dispatch({ type: "AUTH_READY" });
+      console.log(user);
+    });
+  }, []);
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -85,26 +89,12 @@ function App() {
       ],
     },
     {
-      path: "/login",
-      element: user ? <Navigate to="/" /> : <Login />,
+      path: "/signup",
+      element: user ? <Navigate to="/" /> : <Signup />,
       errorElement: <Error />,
-    },
-    {
-      path: "/register",
-      element: user ? <Navigate to="/" /> : <Register />,
-      errorElement: <Error />,
-      action: RegisterAction,
+      action: SignUpAction,
     },
   ]);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      dispatch(login(user));
-      dispatch(authReady());
-    });
-  }, []);
 
   return <>{authReady && <RouterProvider router={routes} />}</>;
 }
