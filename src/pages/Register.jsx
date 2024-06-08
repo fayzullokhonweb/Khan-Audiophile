@@ -2,6 +2,7 @@ import { Link, Form, useActionData } from "react-router-dom";
 import { useRegister } from "../hooks/useRegister";
 import { useEffect } from "react";
 import { SubmitBtn } from "../components";
+import styles from "../css/register.module.css";
 
 export const action = async ({ request }) => {
   let formData = await request.formData();
@@ -24,10 +25,10 @@ function Register() {
   }, [data]);
 
   return (
-    <div className="h-screen grid place-content-center">
+    <div className={styles.wrapper}>
       <Form
         method="post"
-        className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4"
+        className={styles.container}
       >
         <h4 className="text-center text-3xl font-bold">Register</h4>
         <div className="form-control">

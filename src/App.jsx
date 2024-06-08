@@ -33,7 +33,7 @@ import {
   Speakers,
   Error,
   Register,
-  Login,
+  Login
 } from "./pages";
 
 import { loader as HeadphonesLoader } from "./pages/Headphones";
