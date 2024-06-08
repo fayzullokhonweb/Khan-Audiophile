@@ -51,7 +51,7 @@ const Signup = () => {
           <Form>
             <h2>Create Account</h2>
             <div className={styles["social-icons"]}>
-              <button  onClick={signUpWithGoogle} className={styles.icon}>
+              <button onClick={signUpWithGoogle} className={styles.icon}>
                 <FaGooglePlusG style={{ width: "30px", height: "20px" }} />
               </button>
               <button onClick={signUpWithGoogle} className={styles.icon}>
@@ -68,7 +68,11 @@ const Signup = () => {
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button onClick={registerWithEmailAndPassword} type="submit">
+            <button
+              className={styles.button}
+              onClick={registerWithEmailAndPassword}
+              type="submit"
+            >
               Sign Up
             </button>
           </Form>
@@ -94,7 +98,11 @@ const Signup = () => {
             <input name="email" type="email" placeholder="Email" />
             <input name="password" type="password" placeholder="Password" />
 
-            <button onClick={registerWithEmailAndPassword} type="submit">
+            <button
+              className={styles.button}
+              onClick={registerWithEmailAndPassword}
+              type="submit"
+            >
               Sign In
             </button>
           </Form>
