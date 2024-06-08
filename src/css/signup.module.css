@@ -103,6 +103,11 @@
   color: #fff;
 }
 
+.icon {
+  width: 50px;
+  height: 40px;
+}
+
 .sign-up {
   left: 0;
   width: 50%;

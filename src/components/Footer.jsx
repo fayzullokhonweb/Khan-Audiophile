@@ -2,11 +2,14 @@
 import styles from "../css/footer.module.css";
 import NavLinks from "./NavLinks";
 
-function Footer() {
+function Footer({ none, margin }) {
   return (
     <>
-      <section className={`${styles.about} container`}>
-        <div className={styles["about__content"]}>
+      <section
+        style={{ marginBottom: margin }}
+        className={`${styles.about} container`}
+      >
+        <div style={{ display: none }} className={styles["about__content"]}>
           <h2 className={styles["about__content-title"]}>
             Bringing you the <span>best</span> audio gear
           </h2>
@@ -19,7 +22,7 @@ function Footer() {
             make Audiophile the best place to buy your portable audio equipment.
           </p>
         </div>
-        <div className={styles["about__img-wrapper"]}>
+        <div style={{ display: none }} className={styles["about__img-wrapper"]}>
           <img
             className={styles["about__img"]}
             src="../assets/shared/desktop/image-best-gear.jpg"
