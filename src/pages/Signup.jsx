@@ -115,7 +115,7 @@ const Signup = () => {
               <h2>Welcome Back!</h2>
               <p>Enter your personal details to use all of site features</p>
               <button
-                className={`${styles.hidden}button`}
+                className={styles.hidden}
                 id="login"
                 onClick={handleLoginClick}
               >
@@ -130,7 +130,7 @@ const Signup = () => {
                 Register with your personal details to use all of site features
               </p>
               <button
-                className={`${styles.hidden}button`}
+                className={styles.hidden}
                 id="register"
                 onClick={handleRegisterClick}
               >
