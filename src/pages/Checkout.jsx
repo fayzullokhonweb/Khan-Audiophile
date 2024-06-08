@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 // css
 import styles from "../css/checkout.module.css";
 import Footer from "../components/Footer";
-
 import FormInput from "../components/FormInput";
+import { useSelector } from "react-redux";
 
 function Checkout() {
+  const { amount, products } = useSelector((state) => state.products);
+  console.log(amount);
+  console.log(products);
   return (
     <>
       <section className={styles.section}>
@@ -91,7 +94,50 @@ function Checkout() {
                 </div>
               </div>
             </div>
-            <div className={styles.summary}>efbeufbewufbu</div>
+            <div className={styles.summary}>
+              <h6 className={styles["summary__title"]}>SUMMARY</h6>
+              {amount === 0 ? (
+                <p className={styles.empty}>Your cart is empty.</p>
+              ) : (
+                products.map((product, index) => (
+                  <li key={index} className={styles.product}>
+                    <img
+                      src={product.image}
+                      alt={product.slug}
+                      className={styles.productImg}
+                    />
+                    <div className={styles.productDetails}>
+                      <div className={styles.productContent}>
+                        <p>{product.slug}</p>
+                        <p>{product.price}</p>
+                      </div>
+                      <p>x{product.amount}</p>
+                    </div>
+                  </li>
+                ))
+              )}
+              <div className={styles["total__wrapper"]}>
+                <h6>Total</h6>
+                <h6>
+                  $
+                  {products
+                    .reduce(
+                      (total, product) =>
+                        total +
+                        product.amount *
+                          parseFloat(product.price.replace("$", "")),
+                      0
+                    )
+                    .toFixed(2)}
+                </h6>
+              </div>
+              <Link
+                style={{ width: "100%", textAlign: "center" }}
+                className="btn-primary"
+              >
+                CONTINUE & PAY
+              </Link>
+            </div>
           </div>
         </div>
       </section>
