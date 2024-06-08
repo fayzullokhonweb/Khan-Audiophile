@@ -2,11 +2,7 @@
 import { Link } from "react-router-dom";
 
 // css
-import styles from "../css/checkout.module.css"
-
-
-
-
+import styles from "../css/checkout.module.css";
 
 function Checkout() {
   function FormInput({ label, name, type, placeholder }) {
@@ -25,6 +21,8 @@ function Checkout() {
     <div className="container">
       <Link to="/" className="goBack">
         Go back
+      </Link>
+      <div>
         <div>
           <p>billing details</p>
           <div>
@@ -41,7 +39,8 @@ function Checkout() {
             placeholder="+1 202-555-0136"
           />
         </div>
-      </Link>
+        <div className="summary"></div>
+      </div>
     </div>
   );
 }

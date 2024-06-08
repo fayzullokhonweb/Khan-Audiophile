@@ -9,7 +9,9 @@ import {
 } from "../features/productsSlice";
 
 function Modal({ isOpen, onClose }) {
-  const { amount, products } = useSelector((state) => state.products);
+  const { amount, products } = useSelector(
+    (state) => state.products || { amount: 0, products: [] }
+  );
   const dispatch = useDispatch();
 
   if (!isOpen) return null;

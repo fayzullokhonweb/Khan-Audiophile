@@ -11,15 +11,17 @@ import MainLayout from "./layout/MainLayout";
 import { ProtectedRoutes } from "./components";
 
 // context
-import { useContext, useEffect } from "react";
-import { GlobalContext } from "./context/globalContext";
+
+import { useEffect } from "react";
+import { authReady, login } from "./features/userSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 // firebase
-import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
 
 // action
-import { action as SignUpAction } from "./pages/Signup";
+import { action as RegisterAction } from "./pages/Register";
 
 // pages
 import {
@@ -27,10 +29,11 @@ import {
   Checkout,
   Earphones,
   Headphones,
-  Signup,
   SingleProduct,
   Speakers,
   Error,
+  Register,
+  Login,
 } from "./pages";
 
 import { loader as HeadphonesLoader } from "./pages/Headphones";
@@ -39,15 +42,7 @@ import { loader as EarphonesLoader } from "./pages/Earphones";
 import { loader as HomeLoader } from "./pages/Home";
 
 function App() {
-  const { user, dispatch, authReady } = useContext(GlobalContext);
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      dispatch({ type: "LOG_IN", payload: user });
-      dispatch({ type: "AUTH_READY" });
-      console.log(user);
-    });
-  }, []);
+  const { user } = useSelector((state) => state.user);
 
   const routes = createBrowserRouter([
     {
@@ -90,12 +85,26 @@ function App() {
       ],
     },
     {
-      path: "/signup",
-      element: user ? <Navigate to="/" /> : <Signup />,
+      path: "/login",
+      element: user ? <Navigate to="/" /> : <Login />,
       errorElement: <Error />,
-      action: SignUpAction,
+    },
+    {
+      path: "/register",
+      element: user ? <Navigate to="/" /> : <Register />,
+      errorElement: <Error />,
+      action: RegisterAction,
     },
   ]);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      dispatch(login(user));
+      dispatch(authReady());
+    });
+  }, []);
 
   return <>{authReady && <RouterProvider router={routes} />}</>;
 }
