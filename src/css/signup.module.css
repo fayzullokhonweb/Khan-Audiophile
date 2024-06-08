@@ -39,7 +39,7 @@
   margin: 15px 0 10px;
 }
 
-.container button {
+.button {
   background-color: #512da8;
   color: #fff;
   font-size: 12px;
@@ -109,6 +109,8 @@
   justify-content: center;
   padding: 12px 15px;
   text-align: center;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .sign-up {
